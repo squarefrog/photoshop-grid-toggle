@@ -22,16 +22,10 @@ function toggleGridLayer() {
         try {
             gridLayer = app.activeDocument.layerSets.getByName(gridName);
         } catch (e) {
-            try {
-                gridLayer = app.activeDocument.layers.getByName(gridName);
-            } catch (e) {
-                return;
-            }
+            gridLayer = app.activeDocument.layers.getByName(gridName);
         }
         if (gridLayer) {
-            gridLayer.allLocked = false;
             gridLayer.visible = !gridLayer.visible;
-            gridLayer.allLocked = true;
         }
     }
 }
